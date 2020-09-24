@@ -1,0 +1,13 @@
+.addInfo{
+    display: none;
+    color: white;
+    @media screen and (max-width: 575px){
+        display: block;
+        position: absolute;
+        bottom: -67vh;
+        background-color: rgba(222, 184, 135, 0.575);
+        width: 80vw;
+        margin: 1vh;
+        padding-top: 1vh;
+        }
+}

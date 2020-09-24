@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+[routerLinkActive="active"]{background-color: rgb(238, 229, 201);}
+// <a _ngcontent-isw-c32="" routerlinkactive="active" class="nav-link text-warning list-group-item-action active" ng-reflect-router-link-active="active" ng-reflect-router-link="/about" href="/about">Про мене</a>
+// <a _ngcontent-isw-c32="" routerlinkactive="active" class="nav-link text-warning list-group-item-action active" ng-reflect-router-link-active="active" ng-reflect-router-link="/about" href="/about">Про мене</a>
+// .active{
+//     background-color: rgb(238, 229, 201);
+// }
+// [ng-reflect-router-link-active="active"]{
+//     background-color: rgb(238, 229, 201);
+// }

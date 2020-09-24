@@ -1,0 +1,49 @@
+
+<form [formGroup]="addProductForm" class="border-0 " (ngSubmit)="addProduct()">
+  
+
+    <div class="form-group">
+      <!-- <label for="nameUA">Name ua</label> -->
+      <input formControlName="nameProductUA" placeholder="Назва продукту українською"   type="text"  class="form-control">
+    </div>
+    <!-- <div [hidden]="!checkNameUA(addCategoryForm)" class="alert alert-danger">Таке ім'я вже існує</div> -->
+    
+    <div class="form-group">
+      <!-- <label for="nameEN">Name en</label> -->
+      <input formControlName="nameProductEN"  type="text" aria-label="nameEN" aria-describedby="addon-wrapping" placeholder="Name of product in English" class="form-control">
+    </div>
+    <!-- <div [hidden]="!checkNameEN(addCategoryForm)" class="alert alert-danger">Таке ім'я вже існує</div> -->
+    
+    <div class="form-group">
+      <!-- <label for="nameEN">Name en</label> -->
+      <input formControlName="descriptionProductUA"  type="text" aria-label="nameEN" aria-describedby="addon-wrapping" placeholder="Детальний опис продукту" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <!-- <label for="nameEN">Name en</label> -->
+      <input formControlName="priceProductUA"  type="number" aria-label="nameEN" aria-describedby="addon-wrapping" placeholder="ціна" class="form-control">
+    </div>
+    
+    <div class="form-group"> 
+    <select formControlName="productCategory" name="productCategory" class="custom-select" id="inputGroupSelect01">
+        <option selected>Вибрати категорію</option>
+        <option *ngFor="let c of cloudCategories" [ngValue]="c">{{c.nameUA}}</option>
+    </select>
+    </div>
+
+    <div class="input-group is-invalid">
+    <div class="custom-file">
+       <input (change) = "uploadFile($event)" formControlName="productImage" type="file" class="custom-file-input" id="validatedInputGroupCustomFile" required>
+       <label class="custom-file-label" for="validatedInputGroupCustomFile">Фото для товару</label>
+       <!-- <div class="invalid-feedback">Example invalid custom file feedback</div> -->
+    </div>
+    </div>
+    <div class="progress">
+    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" [style.width]="(uploadProgress|async) + '%'" aria-valuemin="0" aria-valuemax="100"></div>
+    <!-- </div> -->
+    </div>
+    <button class="btn btn-success"   type="submit">ADD</button>
+
+</form>
+
+<!-- [disabled]="!addProductForm.valid" -->

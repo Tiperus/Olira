@@ -1,0 +1,35 @@
+<div class="logo d-flex justify-content-center mt-4">OLIRA</div>
+
+<br>
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a [routerLink]="[ '/about' ]" class="nav-link text-warning list-group-item-action">Про мене</a>
+  </li>
+  <div class="btn-group"  dropdown>
+    <li id="button-animated" dropdownToggle class="nav-link nav-item text-warning dropdown-toggle list-group-item-action" 
+            aria-controls="dropdown-animated">
+      Галерея<span class="caret"></span>
+    </li>
+      <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu text-warning"
+        role="menu" aria-labelledby="button-animated" style="background-color: rgba(222, 184, 135, 0.575);">
+        <li role="menuitem" *ngFor="let m of cloudCategories" ><a [routerLink]="[ '/gallery/'+m.nameEN ]"   class="nav-link dropdown-item" routerLinkActive="active" style="color: rgb(160, 97, 107)" >{{m.nameUA}}</a></li>
+        <!-- <li role="menuitem"><a [routerLink]="[ '/gallery/{{m.nameEN}}' ]" style="color: rgb(160, 97, 107);" class="nav-link dropdown-item list-group-item-action" routerLinkActive="active">{{m.nameUA}}</a></li>
+        <li role="menuitem"><a [routerLink]="[ '/gallery/embrodery' ]" style="color: rgb(160, 97, 107);" class="nav-link dropdown-item list-group-item-action" routerLinkActive="active">Вишивка одягу</a></li>
+        <li role="menuitem"><a [routerLink]="[ '/gallery/children' ]" style="color: rgb(160, 97, 107);" class="nav-link dropdown-item list-group-item-action" routerLinkActive="active">Дитячий одяг</a></li>
+        <li role="menuitem"><a [routerLink]="[ '/gallery/decor' ]" style="color: rgb(160, 97, 107);" class="nav-link dropdown-item list-group-item-action" routerLinkActive="active">Декор інтер'єрів</a></li>
+        <li role="menuitem"><a [routerLink]="[ '/gallery/choir' ]" style="color: rgb(160, 97, 107);" class="nav-link dropdown-item list-group-item-action" routerLinkActive="active">Костюми для колективів</a></li> -->
+      </ul>
+  </div>
+  <li class="nav-item">
+    <a [routerLink]="[ '/about' ]" class="nav-link text-warning list-group-item-action">Про мене</a>
+  </li>
+  <li class="nav-item">
+    <a [routerLink]="[ '/map' ]" class="nav-link text-warning list-group-item-action" >Карта</a>
+  </li>
+  <li class="nav-item">
+    <a [routerLink]="[ '/admin' ]" class="nav-link text-warning list-group-item-action" >Адміністратор</a>
+  </li>
+
+</ul>
+
+<!-- style="background-color: rgba(222, 184, 135, 0.575);" routerLinkActive="active" style="color: rgb(160, 97, 107);"-->

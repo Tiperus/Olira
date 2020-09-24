@@ -1,0 +1,18 @@
+{
+  "targets": {
+    "olira-955dc": {
+      "hosting": {
+        "OliraProgect": [
+          "olira-955dc"
+        ]
+      }
+    },
+    "fir-demo-project": {
+      "hosting": {
+        "OliraProgect": [
+          "fir-demo-project"
+        ]
+      }
+    }
+  }
+}
