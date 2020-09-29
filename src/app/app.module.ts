@@ -12,6 +12,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { FormsModule} from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
+// import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -30,6 +31,7 @@ import { MapComponent } from './pages/map/map.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { CategoryComponent } from './pages/admin/category/category.component';
 import { ProductsComponent } from './pages/admin/products/products.component';
+import { ProductByCategoryPipe } from './shared/pipe/product-by-category.pipe';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,8 @@ import { ProductsComponent } from './pages/admin/products/products.component';
     MapComponent,
     AdminComponent,
     CategoryComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProductByCategoryPipe
   ],
   imports: [
     BrowserModule,
@@ -62,7 +65,8 @@ import { ProductsComponent } from './pages/admin/products/products.component';
     AngularFireAuthModule,
     AngularFirestoreModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    // PaginationModule.forRoot()
 
   ],
   providers: [

@@ -1,8 +1,31 @@
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
+
+<div class="fluid d-flex flex-column align-items-end flex-column bd-highlight mb-3">
+<div class="fluid d-flex flex-row justify-content-around flex-wrap">
+<div class="card" style="width: 18rem;" *ngFor="let a of cloudProduct|productByCategory:'embroidery'; let i=index">
+    <!-- <img src={{a.image}} class="card-img-top" alt={{i.nameUA}}> -->
+    <carousel [pauseOnFocus]="true">
+      <slide *ngFor="let item of a.image; let n=index">
+        <img src={{item}} alt="First slide" style="display: block; width: 100%;">
+        <!-- <div class="carousel-caption d-none d-md-block">
+          <h3>{{i.nameUA}}</h3>
+          <p>{{i.price}}</p>
+        </div> -->
+      </slide>
+    </carousel>
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h3 class="card-title">{{a.nameUA}}</h3>
+      <p class="card-text">{{a.price|currency: 'UAH' :'symbol-narrow'}}</p>
       <a href="#" class="btn btn-primary">Go somewhere</a>
+
     </div>
+
+    
   </div>
+
+   
+  <!-- <button type="button" class="btn btn-info" (click)="setPage(3)">Set current page to: 3</button> -->
+</div>
+ <div class="row mt-1">
+
+</div>
+</div>

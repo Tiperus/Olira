@@ -12,6 +12,7 @@ import { IProduct } from '../interface/product.interface';
 })
 export class AllServiceService {
   // cloudCategories:any;
+  // cloudProductByCategory:Array<IProduct>=[];
   // cloudArrayCategory:Array<ICategory>=[];
   // categoryObjc:ICategory={id:'', nameUA:'', nameEN:''};
 
@@ -49,18 +50,36 @@ export class AllServiceService {
 
   }
   // getFireBaseProductByCategory() {
-  //   return this.firestore.collection('product').get().forEach()  
-
+  //   return this.firestore.firestore.collection('product').get().then(function(querySnapshot) {
+  //     querySnapshot.forEach(function(doc) {
+  //       if(doc.data().category.nameEN== "embroidery"){
+          // let x:IProduct = doc.data() as IProduct
+          // this.cloudProductByCategory.push(x)
+          
+        // }
+          // doc.data() is never undefined for query doc snapshots
+          // console.log(doc.id, " => ", doc.data().category.nameEN );
+          // console.log(this.cloudProductByCategory)
+  //     });
+  // })
   // }
-  getCategoryProducts(categoryName: string) {
-    const data = this.firestore.collection('product', ref => 
-      
-      ref.where('category', '==', categoryName)).valueChanges();
-      console.log(data)
-    return data;
-}
+  // db.collection("cities").where("capital", "==", true)
+  // .get()
+  // .then(function(querySnapshot) {
+  //     querySnapshot.forEach(function(doc) {
+  //         // doc.data() is never undefined for query doc snapshots
+  //         console.log(doc.id, " => ", doc.data());
+  //     });
+  // })
+  // .catch(function(error) {
+  //     console.log("Error getting documents: ", error);
+  // });
 
-  }
+  // getCategoryProducts(categoryName: string) {
+  //   const data = this.firestore.firestore.collection('product')
+  // }
+
+}
 
   
 
