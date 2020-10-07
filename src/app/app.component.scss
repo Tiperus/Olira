@@ -2,9 +2,9 @@ main{
     background-image: url(./../assets/images/olira_bg_r.jpg);
     background-size: cover;
     background-position: center;
-    height: 102vh;
+    height: 141vh;
     @media screen and (max-width: 575px){
         height: 160vh;
         }
-    @media all and (min-width: 576px) and (max-width: 1030px) {height: 65vh;}
+    @media all and (min-width: 576px) and (max-width: 1030px) {height: 165vh;}
 }

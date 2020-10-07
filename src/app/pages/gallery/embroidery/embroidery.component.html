@@ -1,16 +1,50 @@
+<div class="container " style="position: relative;">
 
-<div class="fluid d-flex flex-column align-items-end flex-column bd-highlight mb-3">
-<div class="fluid d-flex flex-row justify-content-around flex-wrap">
-<div class="card" style="width: 18rem;" *ngFor="let a of cloudProduct|productByCategory:'embroidery'; let i=index">
-    <!-- <img src={{a.image}} class="card-img-top" alt={{i.nameUA}}> -->
-    <carousel [pauseOnFocus]="true">
+<mat-grid-list [cols]="onResize()" rowHeight="7:9" > 
+<mat-grid-tile *ngFor="let a of cloudProduct|productByCategory: categoryName|changePage: pageNumber  :breakpoint :rowsCalc; let i=index">
+<mat-card class="example-card" style="max-width: 95%; max-height: 99%;" >
+  <mat-card-content>
+   <carousel [pauseOnFocus]="true">
       <slide *ngFor="let item of a.image; let n=index">
-        <img src={{item}} alt="First slide" style="display: block; width: 100%;">
+        <img src={{item}} alt="First slide" class="image_size">
+      </slide>
+    </carousel>
+  </mat-card-content>
+  <mat-card-subtitle>{{a.nameUA}}</mat-card-subtitle>
+  <mat-card-subtitle><p class="disabled">{{a.price|currency: 'UAH' :'symbol-narrow'}}</p></mat-card-subtitle>
+  <mat-card-actions align='end'>
+    <button mat-button>Детально</button>
+
+  </mat-card-actions>
+</mat-card>
+</mat-grid-tile>
+</mat-grid-list>
+
+<div class="pagin_position">
+<button mat-button [matMenuTriggerFor]="afterMenu">Змініть сторінку</button>
+<mat-menu #afterMenu="matMenu" xPosition="before">
+  <button mat-menu-item *ngFor="let item of pagedProduct; let i=index" (click) = "cangePage(i)">Сторінка-{{i+1}}</button>
+</mat-menu>
+</div>
+</div>
+
+
+
+
+<!-- <div class="fluid d-flex flex-column align-items-canter flex-column bd-highlight mb-3">
+
+<div class="fluid d-flex flex-row justify-content-around flex-wrap">
+ 
+<div class="card" style="width: 18rem;" *ngFor="let a of cloudProduct|productByCategory: categoryName; let i=index"> -->
+    <!-- <img src={{a.image}} class="card-img-top" alt={{i.nameUA}}> -->
+    <!-- <carousel [pauseOnFocus]="true">
+      <slide *ngFor="let item of a.image; let n=index">
+        <img src={{item}} alt="First slide" style="display: block; width: 100%;"> -->
         <!-- <div class="carousel-caption d-none d-md-block">
           <h3>{{i.nameUA}}</h3>
           <p>{{i.price}}</p>
         </div> -->
-      </slide>
+      <!-- </slide>
     </carousel>
     <div class="card-body">
       <h3 class="card-title">{{a.nameUA}}</h3>
@@ -20,12 +54,78 @@
     </div>
 
     
-  </div>
+  </div> -->
 
    
   <!-- <button type="button" class="btn btn-info" (click)="setPage(3)">Set current page to: 3</button> -->
-</div>
- <div class="row mt-1">
+<!-- </div>
 
-</div>
-</div>
+</div> -->
+<!-- <mat-grid-list cols="2" rowHeight="1:1">
+  <mat-grid-tile>1</mat-grid-tile>
+  <mat-grid-tile>2</mat-grid-tile>
+  <mat-grid-tile>3</mat-grid-tile>
+  <mat-grid-tile>4</mat-grid-tile>
+</mat-grid-list> -->
+
+<!-- <div class="fluid d-flex flex-row justify-content-around flex-wrap"> -->
+
+<!-- </div> -->
+
+
+
+ <!-- <mat-paginator 
+  [length]="howLength()"
+  [pageSize]="4"
+  [pageSizeOptions]="[4, 5, 6, 8, 10, 16, 24]" showFirstLastButtons>
+  
+</mat-paginator> -->
+
+
+
+
+<!-- <div class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8"> -->
+
+  <!-- <ng-container > -->
+    <!-- <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th> -->
+    <!-- <td mat-cell *matCellDef="let element"> 
+      <div class="example-card" style="max-width: 300px; " >
+      
+       <carousel [pauseOnFocus]="true">
+          <slide *ngFor="let item of element image; let n=index">
+            <img src={{item}} alt="First slide" style="max-width: 250px; background-size: cover;">
+          </slide>
+        </carousel>
+      
+      <p>{{element.nameUA}}</p>
+      <p>{{element.nameEN}}</p>
+      
+        <button mat-button>Детально</button>
+      
+    </div>
+    </td>
+  </ng-container> -->
+  <!-- <ng-container >
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+    <td mat-cell *matCellDef="let element"> <mat-card class="example-card" style="max-width: 300px; " > -->
+      <!-- <mat-card-content>
+       <carousel [pauseOnFocus]="true">
+          <slide *ngFor="let item of element.image; let n=index">
+            <img src={{item}} alt="First slide" style="max-width: 250px; background-size: cover;">
+          </slide>
+        </carousel>
+      </mat-card-content> -->
+      <!-- <mat-card-title>{{element.nameUA}}</mat-card-title>
+      <mat-card-subtitle>{{element.nameEN}}</mat-card-subtitle>
+      <mat-card-actions align='end'>
+        <button mat-button>Детально</button>
+      </mat-card-actions>
+    </mat-card>
+    </td>
+  </ng-container> -->
+  <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [pageSizeOptions]="[4, 5, 8, 10, 16, 20, 24]" showFirstLastButtons></mat-paginator>
+</div> -->

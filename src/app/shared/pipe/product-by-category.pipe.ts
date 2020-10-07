@@ -6,11 +6,11 @@ import { IProduct } from '../interface/product.interface';
 })
 export class ProductByCategoryPipe implements PipeTransform {
 
-  transform(value: Array<IProduct>, args?: string): Array<IProduct> {
-    if (!value) { return [] };
-    if (!args) { return value };
-    console.log(value)
-    return value.filter((val:IProduct)=>{val.category.nameEN === args})
+  transform(value: Array<IProduct>, args: string): Array<IProduct> {
+    if (!args) { return value; }    
+    if (!value) { return []; }
+
+    return value.filter(val => val.category.nameEN===args)
   }
 
 }

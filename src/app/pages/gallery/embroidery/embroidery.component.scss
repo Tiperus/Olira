@@ -1,0 +1,55 @@
+// .example-card {
+//     max-width: 400px;
+//     background-color: bisque;
+//   }
+mat-grid-tile {
+    // background: rgb(247, 236, 216);
+    margin: 3px;
+  }
+mat-card {
+  background: rgb(247, 236, 216);
+  // background: transparent;
+  border: 0, 0, none;
+  outline-style: none;
+  outline-offset: 0ch;
+  outline-color: transparent;
+  box-shadow: transparent;
+}
+
+.pagin_position{
+  position: absolute;
+  right: 0px;
+  bottom: -60px;
+}
+// .container{
+//   height: fit-content;
+// }
+// .container{
+//   @media screen and(max-width: 370px) {
+//     height: 130vh;
+//   }}
+  
+.image_size{
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
+  
+
+  @media screen and (min-width: 320px) and (max-width: 575px){
+    height: 110px;
+    max-height: 110px;
+    object-position:top;
+    
+  }
+  @media screen and (max-width: 320px){
+    height: 80px;
+    max-height: 80px;
+    object-position:top;
+    
+  }
+} 
+ .disabled{
+    @media screen and (max-width: 575px){
+    display: none;  
+    }
+  }

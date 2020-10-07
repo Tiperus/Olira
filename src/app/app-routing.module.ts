@@ -17,10 +17,10 @@ const routes: Routes = [
   {path:'',  pathMatch: 'full', redirectTo: 'about'},
   {path:'about',  component:AboutUsComponent },
   {path:'gallery',  component:GalleryComponent, children: [
-    {path:'',  pathMatch: 'full', redirectTo: 'embrodery'},
+    {path:'',  pathMatch: 'full', redirectTo: 'embroidery'},
     {path:'models', component:ClothingModelingComponent},
     {path:'reconstruction', component:ReconstructionOfClothesComponent},
-    {path:'embrodery', component:EmbroideryComponent},
+    {path:'embroidery', component:EmbroideryComponent},
     {path:'children', component:ChildrensClothingComponent },
     {path:'decor', component:InteriorDecorComponent  },
     {path:'choir', component:CostumesForGroupsComponent  }

@@ -12,6 +12,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { FormsModule} from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
 // import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 
@@ -32,6 +35,11 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { CategoryComponent } from './pages/admin/category/category.component';
 import { ProductsComponent } from './pages/admin/products/products.component';
 import { ProductByCategoryPipe } from './shared/pipe/product-by-category.pipe';
+import { MatTableModule } from '@angular/material/table';
+import {MatMenuModule} from '@angular/material/menu';
+import { ChangePagePipe } from './shared/pipe/change-page.pipe';
+// import { PaginationModule } from 'ngx-bootstrap/pagination';
+// import { FormatPipe} from './format.pipe';
 
 @NgModule({
   declarations: [
@@ -50,7 +58,8 @@ import { ProductByCategoryPipe } from './shared/pipe/product-by-category.pipe';
     AdminComponent,
     CategoryComponent,
     ProductsComponent,
-    ProductByCategoryPipe
+    ProductByCategoryPipe,
+    ChangePagePipe
   ],
   imports: [
     BrowserModule,
@@ -66,6 +75,11 @@ import { ProductByCategoryPipe } from './shared/pipe/product-by-category.pipe';
     AngularFirestoreModule,
     FormsModule,
     ReactiveFormsModule,
+    MatPaginatorModule,
+    MatCardModule,
+    MatGridListModule,
+    MatTableModule,
+    MatMenuModule
     // PaginationModule.forRoot()
 
   ],

@@ -79,7 +79,9 @@ export class ProductsComponent implements OnInit {
   addProduct():void{
     const product:IProduct = new Product ('1', this.addProductForm.value.productCategory, this.addProductForm.value.nameProductUA, this.addProductForm.value.nameProductEN, this.addProductForm.value.descriptionProductUA, this.addProductForm.value.priceProductUA, 1, this.productImagesArray )
     console.log(product)
+
     if(this.cloudProduct.length > 0) {
+      this.cloudProduct.sort((a:IProduct, b:IProduct)=> +a.id - +b.id)
       product.id = (+this.cloudProduct.slice(-1)[0].id + 1).toString();
     }
       this.productData.addFirebaseProduct(product)
